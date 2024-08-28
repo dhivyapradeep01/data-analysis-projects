@@ -16,16 +16,41 @@ for s in strings:
  else:
     print(f"The string {s} has an unknown delimiter.")
 
-# b) If the string uses commas to separate the words, split it into an array, reverse the entries, and then join the array into a new comma separated string.
+# b) If the string uses commas to separate the words, split it into an array, 
+# reverse the entries, and then join the array into a new comma separated string.
+
+for s in strings:
+ if "," in s:
+    words = s.split(',')
+    words.reverse()
+    commaSeparatedReverseString = ','.join(words)
+    print("Comma separated reverse string: " + commaSeparatedReverseString)
+# c) If the string uses semicolons to separate the words, split it into an array, 
+#  the entries, and then join the array into a new comma separated string.
+for s in strings:
+ if ";" in s:
+   words = s.split(';')
+   commaSeparatedString = ','.join(words)
+   print("Comma separated string: " + commaSeparatedString)
+
+# d) If the string uses spaces to separate the words,
+#  split it into an array, reverse alphabetize the entries, 
+# and then join the array into a new space separated string.
+for s in strings:
+ if " " and not "," in s:
+   words = s.split(" ")
+   words.sort(reverse=True)
+   spaceSeparatedString = ' '.join(words)
+   print("Space separated reverse alphabetized string: " + spaceSeparatedString)
 
 
 
-# c) If the string uses semicolons to separate the words, split it into an array, alphabetize the entries, and then join the array into a new comma separated string.
-
-
-
-# d) If the string uses spaces to separate the words, split it into an array, reverse alphabetize the entries, and then join the array into a new space separated string.
-
-
-
-# e) If the string uses ‘comma spaces’ to separate the list, modify your code to produce the same result as part “b”, making sure that the extra spaces are NOT part of the final string.
+# e) If the string uses ‘comma spaces’ to separate the list,
+#  modify your code to produce the same result as part “b”,
+#  making sure that the extra spaces are NOT part of the final string.
+for s in strings:
+ if ", " in s:
+    words = s.split(', ')
+    words.reverse()
+    commaSpaceSeparatedReverseString = ','.join(words)
+    print("Comma-Space separated reverse string - no extra spaces: " +     commaSpaceSeparatedReverseString)
